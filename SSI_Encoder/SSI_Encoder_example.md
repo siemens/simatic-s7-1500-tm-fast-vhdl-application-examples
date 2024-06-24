@@ -35,11 +35,11 @@ The following values are returned by the encoder in the feedback interface. <br>
     <th colspan="8">Byte3</th>
     <th colspan="8">Byte2</th>
     <th colspan="8">Byte1</th>
-    <th colspan="8" style="text-align: center">Byte0</th>
+    <th colspan="8" style="text-align: right">Byte0</th>
   </tr>
   <tr>
     <td>*DWord0</td>
-    <td colspan="32"  style="text-align: center">ENCODERCOUNT</td>
+    <td colspan="32"  style="text-align: right">ENCODERCOUNT</td>
   </tr>
   <tr>
     <td>*DWord1</td>
