@@ -52,8 +52,8 @@ The following values are returned by the encoder in the feedback interface. <br>
     <td></td>
     <td></td>
     <td></td>
-    <td>FRAMEOVERRUN</td>
-    <td>DATAVAILABLE</td>
+    <td>FRAME_OVERRUN</td>
+    <td>DATAVAAILABLE</td>
   </tr>
 </table>
 
@@ -82,5 +82,6 @@ To use the logic example, you need to download the architecture and the package 
 ## History
 
 SSI Example V1.0: First released Version.\
-SSI Example V1.0.1: Release for the System logic 1.0.1
+SSI Example V1.0.1: Release for the System logic 1.0.1 \
+SSI Example V1.0.1: Update for the FRAME_OVERRUN function 
 

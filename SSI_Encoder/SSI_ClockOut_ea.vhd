@@ -21,11 +21,11 @@ use IEEE.NUMERIC_STD.ALL;
 use work.TFL_FAST_USER_IP_CONF_PUBLIC_p.all;
 
 
-entity SSI_new_ClockOut_e is
+entity SSI_ClockOut_e is
     Generic (
           BIT_WIDTH   : integer;
-		  MONOFLOPSEL : integer;
-		  CLOCKSEL    : integer;
+		    MONOFLOPSEL : integer;
+		    CLOCKSEL    : integer;
           FRAME_WIDTH : integer
     );
     Port ( 
@@ -34,9 +34,9 @@ entity SSI_new_ClockOut_e is
         SSICLOCK   : out STD_LOGIC;
         SSI_LATCH  : out STD_LOGIC := '0'
     );
-end SSI_new_ClockOut_e;
+end SSI_ClockOut_e;
 
-architecture SSI_new_ClockOut_a of SSI_new_ClockOut_e is
+architecture SSI_ClockOut_a of SSI_ClockOut_e is
 
 
 signal CLK_CNT     : natural;
@@ -56,25 +56,25 @@ begin
 	--CLOCK Signal division factor
 					  --Clk counter for 125KHz Clockout  
 	CLK_CNT   <=  40   when (F_CLK_USER = 5_000_000 ) AND (CLOCKSEL = 0) else 
-                 120   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 0) else
+                 120  when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 0) else
 					  200  when (F_CLK_USER = 25_000_000) AND (CLOCKSEL = 0) else
 					  400  when (F_CLK_USER = 50_000_000) AND (CLOCKSEL = 0) else
 					  600  when (F_CLK_USER = 75_000_000) AND (CLOCKSEL = 0) else
 					  --Clk counter for 250KHz Clockout
 					  20   when (F_CLK_USER = 5_000_000 ) AND (CLOCKSEL = 1) else 
-                      60   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 1) else
+                 60   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 1) else
 					  100  when (F_CLK_USER = 25_000_000) AND (CLOCKSEL = 1) else
 					  200  when (F_CLK_USER = 50_000_000) AND (CLOCKSEL = 1) else
 					  300  when (F_CLK_USER = 75_000_000) AND (CLOCKSEL = 1) else
 					  --Clk counter for 500KHz Clockout
 					  10   when (F_CLK_USER = 5_000_000 ) AND (CLOCKSEL = 2) else 
-                      30   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 2) else
+                 30   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 2) else
 					  50   when (F_CLK_USER = 25_000_000) AND (CLOCKSEL = 2) else
 					  100  when (F_CLK_USER = 50_000_000) AND (CLOCKSEL = 2) else
 					  150  when (F_CLK_USER = 75_000_000) AND (CLOCKSEL = 2) else
 					  --Clk counter for 1MHz Clockout
 					  5    when (F_CLK_USER = 5_000_000 ) AND (CLOCKSEL = 3) else 
-                      15   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 3) else
+                 15   when (F_CLK_USER = 15_000_000) AND (CLOCKSEL = 3) else
 					  25   when (F_CLK_USER = 25_000_000) AND (CLOCKSEL = 3) else
 					  50   when (F_CLK_USER = 50_000_000) AND (CLOCKSEL = 3) else
 					  75;
@@ -173,5 +173,5 @@ begin
 	END PROCESS;   
  	  
 
-end SSI_new_ClockOut_a;
+end SSI_ClockOut_a;
 

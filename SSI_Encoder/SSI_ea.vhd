@@ -20,9 +20,9 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
-entity SSI_new_e is
+entity SSI_e is
     Generic (
-        BIT_WIDTH   : integer range 13 to 32 := 16;
+        BIT_WIDTH   : integer range 13 to 32 := 13;
 		  MONOFLOPSEL : integer range  0 to 3  :=  0;
 	     CLOCKSEL    : integer range  0 to 3  :=  0;
 	     SHIFT_DIR   : string  := "right";
@@ -35,19 +35,19 @@ entity SSI_new_e is
         GRAY_BIN_N   : in  STD_LOGIC;
         SSI_DATA_IN  : in  STD_LOGIC;
         ENCODERCOUNT : out STD_LOGIC_VECTOR ( (BIT_WIDTH - 1) downto 0 );
-		SSI_CLOCK    : out STD_LOGIC;
-		DATAAVAILABLE: out STD_LOGIC;
-	    FRAME_OVERRUN: out STD_LOGIC
+	  	  SSI_CLOCK    : out STD_LOGIC;
+		  DATAAVAILABLE: out STD_LOGIC;
+	     FRAME_OVERRUN: out STD_LOGIC
     );
-end SSI_new_e;
+end SSI_e;
 
-architecture SSI_new_a of SSI_new_e is
+architecture SSI_a of SSI_e is
 
-    component SSI_new_ClockOut_e is
+    component SSI_ClockOut_e is
         Generic (
             BIT_WIDTH   : integer;
-			MONOFLOPSEL : integer;
-			CLOCKSEL    : integer;
+			   MONOFLOPSEL : integer;
+			   CLOCKSEL    : integer;
             FRAME_WIDTH : integer
         );
         Port (
@@ -58,11 +58,12 @@ architecture SSI_new_a of SSI_new_e is
         );
     end component;
 
-    component SSI_new_Input_e is
+    component SSI_Input_e is
         Generic (
             BIT_WIDTH   : integer;
-			SHIFT_DIR   : string;
-		    SHIFT_COUNT : integer;
+			   SHIFT_DIR   : string;
+		      SHIFT_COUNT : integer;
+				CLOCKSEL    : integer;
             FRAME_WIDTH : integer
         );
         Port (
@@ -73,8 +74,9 @@ architecture SSI_new_a of SSI_new_e is
             SSI_LATCH    : in  STD_LOGIC;
             SSI_DATA_IN  : in  STD_LOGIC;
             ENCODERCOUNT : out STD_LOGIC_VECTOR ((BIT_WIDTH - 1) downto 0);
-			DATAAVAILABLE: out STD_LOGIC;
-			FRAME_OVERRUN: out STD_LOGIC
+			   DATAAVAILABLE: out STD_LOGIC;
+			   FRAME_OVERRUN: out STD_LOGIC
+				
         );
     end component;
 	
@@ -85,7 +87,7 @@ begin
 
     SSI_CLOCK <= SSI_CLOCK_INPUT;
 
-    SSIClockOut_m: SSI_new_ClockOut_e
+    SSIClockOut_m: SSI_ClockOut_e
     generic map (
         BIT_WIDTH   => BIT_WIDTH,
 		  MONOFLOPSEL => MONOFLOPSEL,
@@ -99,11 +101,12 @@ begin
         SSI_LATCH   => SSI_LATCH_SIGNAL
     );
 
-    SSIInput_m: SSI_new_Input_e
+    SSIInput_m: SSI_Input_e
     generic map (
         BIT_WIDTH   => BIT_WIDTH,
 		  SHIFT_DIR   => SHIFT_DIR,
-		 SHIFT_COUNT => SHIFT_COUNT,
+		  SHIFT_COUNT => SHIFT_COUNT,
+		  CLOCKSEL    => CLOCKSEL,
         FRAME_WIDTH => FRAME_WIDTH
     )
     port map (
@@ -116,7 +119,8 @@ begin
         ENCODERCOUNT  => ENCODERCOUNT,
 		  DATAAVAILABLE => DATAAVAILABLE,
 		  FRAME_OVERRUN => FRAME_OVERRUN
+		  
     );
 	
-end SSI_new_a;
+end SSI_a;
 
