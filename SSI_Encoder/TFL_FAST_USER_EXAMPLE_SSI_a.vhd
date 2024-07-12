@@ -36,7 +36,7 @@ begin
   DQ <= ( others => '0' );
  
   --GENERATE SSI Module--
-  SSI: entity work.SSI_new_e(SSI_new_a)
+  SSI: entity work.SSI_e(SSI_a)
   GENERIC MAP (
           BIT_WIDTH   => COUNT_BIT_WIDTH,
 		  MONOFLOPSEL => MONOFLOPSEL,
