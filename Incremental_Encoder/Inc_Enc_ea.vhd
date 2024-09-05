@@ -1,20 +1,18 @@
+---------------------------------------------------------------------------------
+-- © Siemens 2024
+-- SPDX-License-Identifier: MIT
+--                                                                            
+-- Create Date:    04/06/2020 
+-- Design Name:    TM FAST logic library
+-- Module Name:    Inc_Enc_e - Inc_Enc_a
+-- Description:    Encoder interface.
+--
+-- Revision: 
+-- Revision 1.0 - File modified 05/20/2021
+-- Additional Comments:                                    
+--                                                                            
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---                                                                            --
--- top heading architecture of INCREMENTAl ENCODER Logic of TM FASTs          --
---                                                                            --
--- filename    INC_ENC.vhd                                                    --
---                                                                            --
--- copyright   Siemens Industry, Inc                                          --
---                                                                            --
--- version     see TFL_FAST_USER_INC_ENC_p.vhd                                --
---                                                                            --
--- history     see TFL_FAST_USER_HISTORY.txt                                  --
---                                                                            --
--- Revision 1.0 - File modified 05/20/2021                                    --
---                                                                            --
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+
 
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                

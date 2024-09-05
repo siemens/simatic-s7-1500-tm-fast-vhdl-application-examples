@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
---                                                                            --
+-- © Siemens 2024
+-- SPDX-License-Identifier: MIT                                               --
 -- top heading test architecture of User Logic of TM FASTs                    --
 --                                                                            --
 -- filename    TFL_FAST_USER_INC_ENC_a.vhd                                    --

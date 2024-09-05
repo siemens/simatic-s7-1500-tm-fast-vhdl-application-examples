@@ -1,15 +1,15 @@
-----------------------------------------------------------------------------------
--- Company:        Siemens Industry, Inc
+---------------------------------------------------------------------------------
+-- © Siemens 2024
+-- SPDX-License-Identifier: MIT
+--                                                                            
 -- Create Date:    04/06/2020 
--- Design Name:    FM352-5 Interface Library
+-- Design Name:    TM FAST logic library
 -- Module Name:    QuadDec_e - QuadDec_a 
--- Description: 
---
--- Dependencies: 
+-- Description:    Encoder interface.
 --
 -- Revision: 
 -- Revision 1.0 - File modified 05/20/2021
--- Additional Comments: 
+-- Additional Comments:    
 --
 ----------------------------------------------------------------------------------
 library IEEE;
