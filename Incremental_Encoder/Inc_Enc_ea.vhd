@@ -28,7 +28,6 @@ entity Inc_Enc_e is
         CLK          : in  std_logic;                                    -- clock of user logic (low-to-high-edge!)
         RST          : in  std_logic;                                    -- reset of user logic (high-active!)
         STOP         : in  std_logic;                                    -- CPU_STOP
-		CLKEN        : in  std_logic;                                    -- clk_en 
         -- Counter Signals A/B/N
         A            : in  std_logic;                                    -- a_pulse
         B            : in  std_logic;                                    -- b_dir
@@ -73,7 +72,7 @@ component Encoder_e
         RST          : in  std_logic;
         CLK          : in  std_logic;
         STOP         : in  std_logic;
-		  CLKEN        : in  std_logic;
+	 CLKEN        : in  std_logic;
         PULSECLEAR   : in  std_logic;
         LOAD         : in  std_logic;
         CD           : in  std_logic;
@@ -184,7 +183,7 @@ begin
             RST           => RST,          -- asynchronous reset
             CLK           => CLK,
             STOP          => STOP,         -- CPU_STOP 	
-			CLKEN 		  => '1',
+	    CLKEN 	  => '1',
             PULSECLEAR    => PULSECLEAR, 
             LOAD          => LOAD, 
             CD            => CD, 
