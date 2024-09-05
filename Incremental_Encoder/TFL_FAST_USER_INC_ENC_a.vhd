@@ -84,7 +84,6 @@ begin
    CLK           => CLK,             -- clock of user logic (low-to-high-edge!)
 	RST           => RST,             -- reset of user logic (high-active!)
 	STOP          => CPU_STOP,        -- CPU_STOP
-	CLKEN	      => '1',
 	-- Counter Signals A/B/N
 	A             => DI_MSK(CH_A),       -- a_pulse
 	B             => DI_MSK(CH_B),       -- b_dir
@@ -93,7 +92,7 @@ begin
 	A_PULSE_POL   => A_PULSE_POL_VAL, -- a_pulse polarity
 	B_DIR_POL     => B_DIR_POL_VAL,   -- b_dir polarity
 	N_ZERO_POL    => N_ZERO_POL_VAL,  -- n_zero polarity
-   PULSECLEAR    => PULSECLEAR,      -- clear counter value
+        PULSECLEAR    => PULSECLEAR,      -- clear counter value
 	LOAD          => LOAD,            -- load signal
 	EDGE          => EDGE,            -- edge signal
 	MISSINGSUPPLY => LP_QI_BAD,       -- quality information of L+ supply
