@@ -1,5 +1,7 @@
 ----------------------------------------------------------------------------------
--- Company:        Siemens Industry, Inc
+-- © Siemens 2024
+-- SPDX-License-Identifier: MIT
+--
 -- Create Date:    04/06/2020 
 -- Design Name:    TM FAST logic library
 -- Module Name:    Encoder_e - Encoder_a
