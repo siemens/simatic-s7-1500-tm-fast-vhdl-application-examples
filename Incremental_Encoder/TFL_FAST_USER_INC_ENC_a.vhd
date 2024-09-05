@@ -83,7 +83,7 @@ begin
    CLK           => CLK,             -- clock of user logic (low-to-high-edge!)
 	RST           => RST,             -- reset of user logic (high-active!)
 	STOP          => CPU_STOP,        -- CPU_STOP
-	--CLKEN			  => '1',
+	CLKEN	      => '1',
 	-- Counter Signals A/B/N
 	A             => DI_MSK(CH_A),       -- a_pulse
 	B             => DI_MSK(CH_B),       -- b_dir
