@@ -83,3 +83,5 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/siemen
 - **Explain why this enhancement would be useful** to most TM FAST users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 ## Thank you!
+
+To contact our team : simatic.tmapplication.industry@siemens.com
