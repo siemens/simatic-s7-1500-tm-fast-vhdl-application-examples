@@ -24,8 +24,8 @@ architecture TFL_FAST_USER_INC_ENC_a of TFL_FAST_USER_e is
   
   
   -- Incremental encoder status
-  alias   STATUS:      std_logic_vector is FB_IF(0);                                       -- Incremental encoder statusregister
-  alias   INC_ENC_COUNT_VALUE: std_logic_vector is FB_IF(1)((COUNT_BIT_WIDTH-1) downto 0); -- Incremental encoder counter value
+  alias   STATUS:      std_logic_vector is FB_IF0;                                       -- Incremental encoder statusregister
+  alias   INC_ENC_COUNT_VALUE: std_logic_vector is FB_IF1((COUNT_BIT_WIDTH-1) downto 0); -- Incremental encoder counter value
   
   
   -- DI / DQ Status
@@ -45,7 +45,7 @@ architecture TFL_FAST_USER_INC_ENC_a of TFL_FAST_USER_e is
   alias   DIAG_STAT_LP_QI:     std_logic     is STATUS(25);    -- status of the quality information of L+ supply
   
   --Incremental Encoder Parameters
-  alias INC_CTRL: std_logic_vector is CTRL_IF(0);     -- CTRL_IF(0) is selected to setup the INC_CTRL parameters
+  alias INC_CTRL: std_logic_vector is CTRL_IF0;     -- CTRL_IF(0) is selected to setup the INC_CTRL parameters
     -- Incremental encoder control register
   alias   PULSECLEAR:        std_logic       is INC_CTRL(0);            -- clear counter value
   alias   LOAD:              std_logic       is INC_CTRL(1);             -- load signal
@@ -84,6 +84,7 @@ begin
    CLK           => CLK,             -- clock of user logic (low-to-high-edge!)
 	RST           => RST,             -- reset of user logic (high-active!)
 	STOP          => CPU_STOP,        -- CPU_STOP
+	CLKEN         => '1',
 	-- Counter Signals A/B/N
 	A             => DI_MSK(CH_A),       -- a_pulse
 	B             => DI_MSK(CH_B),       -- b_dir
@@ -136,27 +137,25 @@ begin
   end generate;
 
 
-  TEST_p: process ( RST, CLK, CTRL_IF )
+  TEST_p: process ( RST, CLK )
   begin
     -- asynchron reset
-    if RST = '1' then
-	  FB_IF(2)              <= ( others => '0' ); -- unused register
-	  FB_IF(3)              <= ( others => '0' ); -- unused register
-	  FB_IF(4)              <= ( others => '0' ); -- unused register
-	  FB_IF(5)              <= ( others => '0' ); -- unused register
-	  FB_IF(6)              <= ( others => '0' ); -- unused register
-	  FB_IF(7)              <= ( others => '0' ); -- unused register
+    if RST = '1' then		
+		FB_IF2             <= ( others => '0' ); -- unused register
+	   FB_IF3             <= ( others => '0' ); -- unused register
+	   FB_IF4             <= ( others => '0' ); -- unused register
+	   FB_IF5             <= ( others => '0' ); -- unused register
+	   FB_IF6             <= ( others => '0' ); -- unused register
+	   FB_IF7             <= ( others => '0' ); -- unused register
 
     -- no reset and rising edge on clk
     elsif rising_edge ( CLK ) then
-		
-      -- defaults
-		FB_IF(2)              <= ( others => '0' ); -- unused register
-	   FB_IF(3)              <= ( others => '0' ); -- unused register
-	   FB_IF(4)              <= ( others => '0' ); -- unused register
-	   FB_IF(5)              <= ( others => '0' ); -- unused register
-	   FB_IF(6)              <= ( others => '0' ); -- unused register
-	   FB_IF(7)              <= ( others => '0' ); -- unused register
+		FB_IF2             <= ( others => '0' ); -- unused register
+	   FB_IF3             <= ( others => '0' ); -- unused register
+	   FB_IF4             <= ( others => '0' ); -- unused register
+	   FB_IF5             <= ( others => '0' ); -- unused register
+	   FB_IF6             <= ( others => '0' ); -- unused register
+	   FB_IF7             <= ( others => '0' ); -- unused register
 
        ------------------------------------
   	   -- fill feedback interface(FB_IF)  --

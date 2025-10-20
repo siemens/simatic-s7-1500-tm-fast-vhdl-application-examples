@@ -22,8 +22,8 @@ package TFL_FAST_USER_EXAMPLE_SSI_p is
    -------------------------------
 	--SSI I/O channel selection  --
 	-------------------------------
-	constant SSI_CLOCK_TX        : integer range 0 to 7   :=  0;
-	constant SSI_DATA_IN_RX      : integer range 0 to 7   :=  4;
+	constant SSI_CLOCK_TX        : integer range 0 to 7   :=  6;
+	constant SSI_DATA_IN_RX      : integer range 0 to 7   :=  0;
    --SSI whole frame length 
 	constant COUNT_BIT_WIDTH     : integer range 13 to 32 := 16;   
 	--SSI position value length
@@ -53,13 +53,13 @@ package TFL_FAST_USER_EXAMPLE_SSI_p is
   ---------------------------------------------------------             
   -- Selection of feedback interface(FB_IF) DWORD        --              
   --------------------------------------------------------- 
-	constant FB_IF_SSI_VAL         : integer range 0 to 7  :=   0;
+	--constant FB_IF_SSI_VAL         : integer range 0 to 7  :=   0;
 	
-	constant FB_IF_DATAAVAILABLE_W : integer range 0 to 7  :=   1;
+	--constant FB_IF_DATAAVAILABLE_W : integer range 0 to 7  :=   1;
 	
 	constant FB_IF_DATAAVAILABLE_B : integer range 0 to 31  :=  0;
 	
-	constant FB_IF_FRAME_OVERRUN_W : integer range 0 to 7  :=   1;
+	--constant FB_IF_FRAME_OVERRUN_W : integer range 0 to 7  :=   1;
 	
 	constant FB_IF_FRAME_OVERRUN_B : integer range 0 to 31  :=  1;	
   ---------------------------------------------------------             
