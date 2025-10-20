@@ -14,8 +14,20 @@ This repository contains a collection of source code examples that are designed 
 Whether you are a beginner or an experienced user, these examples serve as a helpful guide to understand how to use the module. 
 The TM FAST module source code examples, provides the users with best practices and good starting point to realise your own applications by adapting the files to your specific needs.
 
+## Branch Information - Legacy TM FAST Module Support
+
+This branch is specifically maintained for projects using TM FAST modules with the [**Siemens system logic**](https://www.industry-mobile-support.siemens-info.com/en/article/detail/109817062) V1.0.1
+
+## Important Notice
+- This is a legacy support branch
+- Only compatible with TM FAST module system logic V1.0.1
+- No new features will be added
+- Only critical bug fixes will be provided
+
+If you are starting a new project, we strongly recommend using the main branch with the latest Siemens system logic version. For existing projects that require V1.0.1 compatibility, this branch will remain available but in maintenance mode only.
+
 ## License and Copyright
 
-© Siemens AG 2024
+© Siemens AG 2024 - 2025
 
 SPDX-License-Identifier: MIT
