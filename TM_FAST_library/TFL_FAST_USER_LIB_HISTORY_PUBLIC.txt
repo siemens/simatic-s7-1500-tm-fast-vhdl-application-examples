@@ -1,0 +1,10 @@
+--------------------------------------------------
+TM FAST logic library
+Siemens AG, Digital Industries, Factory Automation
+--------------------------------------------------
+
+history:
+
+28-July-2025 V03.00.00 
+- version V3.0.0 of the TM FAST logic library
+
